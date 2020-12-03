@@ -10,9 +10,7 @@ function getPlayers() {
       }
       else {
         alert("Pelaajia ei löytynyt!");
-
       }
-
     }
   };
   xmlhttp.open("GET", "https://rocky-cliffs-72708.herokuapp.com/api/players?group=" + localStorage.getItem("group"), true);
@@ -41,8 +39,6 @@ function showList(json) {
 
     td2.appendChild(checkbox);
 
-
-
     tableRow.appendChild(td1);
     tableRow.appendChild(td2);
 
@@ -50,3 +46,20 @@ function showList(json) {
   }
 }
 getPlayers();
+
+function newPlayer() {
+  let player = document.getElementById("playerfield").value;
+  let group = localStorage.getItem("group");
+  let body;
+  if(player === null || player === ""){
+    alert('Kirjoita pelaajan nimi!');
+  }
+  else {
+    body = { "pelaajan_nimi": player, "ryhman_nimi": group};
+    let xmlhttp = new XMLHttpRequest();
+    xmlhttp.open("POST", "https://rocky-cliffs-72708.herokuapp.com/api/newplayer", true);
+    xmlhttp.setRequestHeader("Content-Type", "application/json");
+    xmlhttp.send(JSON.stringify(body));
+
+  }
+}
