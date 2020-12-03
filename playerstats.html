@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <script src="js/playerstats.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!--Bootstrap-->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
@@ -12,9 +11,6 @@
     <link rel="stylesheet" href="styles.css">
     <meta charset="UTF-8">
     <title>Title</title>
-    <script>
-        getPlayers();
-    </script>
 </head>
 <body id="statistiikkaBody">
 <div class="container-fluid">
@@ -30,11 +26,70 @@
                 </tr>
                 </thead>
                 <tbody id="tableBody">
-
                 </tbody>
             </table>
         </div>
     </div>
+    <button type="button" class="btn btn-primary btn-block btn-md" data-toggle="modal" data-target="#myModal" onclick="getPlayerStats()">
+        Pelaajan statistiikka
+    </button>
+    <div class="row justify-content-center">
+        <div class="col-auto">
+
+            <!--modal-->
+
+    <div class="modal" id="myModal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">Pelaajan tiedot</h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <table class="table table-striped">
+                        <tr>
+                            <th>Nimi:</th>
+                            <td id="td1"></td>
+                        </tr>
+                        <tr>
+                            <th>Ottelut:</th>
+                            <td id="td2"></td>
+                        </tr>
+                        <tr>
+                            <th>Voitot:</th>
+                            <td id="td3"></td>
+                        </tr>
+                        <tr>
+                            <th>Voittoprosentti:</th>
+                            <td id="td4"></td>
+                        </tr>
+                        <tr>
+                            <th>Heitot:</th>
+                            <td id="td5"></td>
+                        </tr>
+                        <tr>
+                            <th>Osumatarkkuus:</th>
+                            <td id="td6"></td>
+                        </tr>
+                        <tr>
+                            <th>Pistekeskiarvo:</th>
+                            <td id="td7"></td>
+                        </tr>
+                        </thead>
+                        <tbody id="tableBody2">
+                        </tbody>
+                    </table>
+                </table>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Sulje</button>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
+    </div>
+</div>
+</div>
+<script src="js/playerstats.js"></script>
 </body>
 </html>
