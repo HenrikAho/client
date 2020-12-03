@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="js/settings.js"></script>
+    <!--Bootstrap-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div class="container-fluid">
+    <h1 id="asetukset">Asetukset</h1>
+    <div class="row">
+        <div class="col-md-12 text-center">
+            <h3 id="darkmode">Dark/Light Mode</h3>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="btn-toolbar" style="justify-content: center; display: flex;" id="napit">
+                <button class="btn btn-primary" id="lightNappi" style="color: black" onclick="changeLightmode();">Light</button>
+                <button class="btn btn-primary" id="darkNappi" style="color: black" onclick="changeDarkmode();">Dark</button>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col text-center">
+            <a href="menuscreen.html" style="color: black; text-decoration:none"><button type="button" id="settingsToMenu">Takaisin</button></a>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

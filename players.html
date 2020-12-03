@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="js/players.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--Bootstrap-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-12">
+            <h1>Valitse pelaajat</h1>
+        </div>
+    </div>
+    <div class="wrapper">
+        <div id="app">
+            <p>
+                <div class="row">
+            <div class="col-lg-12 text-center">
+                <input type="text" id="playerfield" class="textfield" v-model="todoText" placeholder="Lisää uusi pelaaja" />
+            </div>
+            <div class="col-lg-12 text-center" id="playerbutton">
+                <button v-on:click="addTodo()" class="btn btn-primary btn-sm">Lisää</button>
+            </div>
+        </div>
+
+            </p>
+            <ul class="list-unstyled">
+                <li v-for="(todo, index) in todos">
+                    <label>
+                        <span v-bind:class="{'done': todo.done}">{{todo.text}}</span>
+                        <button v-on:click="removeToDo(index)" class="btn btn-primary btn-sm">Poista</button>
+                    </label>
+                </li>
+            </ul>
+        </div>
+        <div class="row">
+            <div class="col-lg-12 text center">
+                <a href="peli1.html" style="text-decoration:none"><button class="btn btn-primary btn-sm">Aloita Peli</button></a>
+            </div>
+        </div>
+        <script>
+            let app = new Vue({
+                el: '#app',
+                data: {
+                    todoText: '',
+                    todos: [
+
+                    ],
+                },
+                methods: {
+                    addTodo: function() {
+                        let newTodo = this.todoText.trim();
+                        if (!newTodo) {return;}
+                        this.todos.push(
+                            {text: newTodo, done: false},
+                        );
+                        this.todoText = '';
+                    },
+                    removeToDo: function(index) {
+                        this.todos.splice(index, 1)
+                    },
+                },
+            });
+        </script>
+</div>
+</div>
+</body>
+</html>

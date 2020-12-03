@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--Bootstrap-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-12">
+            <h1 id="ryhmanNimi"></h1>
+        </div>
+    </div>
+     <div class="wrapper">
+        <a href="newgame.html" style="color: black; text-decoration:none"><button id="newGame" type="button">Uusi Peli</button></a>
+     </div>
+     <div class="wrapper">
+         <a href="playerstats.html" style="color: black; text-decoration:none"><button id="statistic" type="button" onclick="getPlayers()">Statistiikka</button></a>
+     </div>
+     <div class="wrapper">
+         <a href="settings.html" style="color: black; text-decoration:none"><button id="settings" type="button">Asetukset</button></a>
+     </div>
+</div>
+<script src="js/menuscreen.js"></script>
+<script src="js/playerstats.js"></script>
+</body>
+</html>
