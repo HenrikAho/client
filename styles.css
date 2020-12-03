@@ -1,10 +1,13 @@
-body {
+html, body {
     background-image: url('images/taustakuva.jpg');
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
-
+    position: relative;
+    overflow-x: hidden;
+    overflow-y: hidden;
 }
+
 
 p {
     text-align: center;
@@ -257,3 +260,4 @@ ul {
     font-size: 15px;
     font-weight: bold;
 }
+
