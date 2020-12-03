@@ -161,7 +161,6 @@ ul {
 
 .grid-container {
     display: grid;
-    grid-template-columns: auto auto auto;
     background-color: black;
     padding: 10px;
 }
