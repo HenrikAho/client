@@ -33,6 +33,10 @@ h1 {
     transform: scale(1);
     margin-top: 1em;
 }
+#resultfield {
+    transform: scale(3);
+    margin-top: 1em;
+}
 
 #playerbutton {
     padding-top: 0.7em;
@@ -69,7 +73,13 @@ tr {
 }
 
 td {
-    padding: 0.5em !important;
+    padding: 0.3em !important;
+
+}
+#savedPlayerTd {
+    width: 50%;
+    min-width: 80px;
+    vertical-align: middle;
 }
 
 #statistiikkaOtsikko {

@@ -33,6 +33,9 @@ function showList(json) {
     td2 = document.createElement("td");
     checkbox = document.createElement("input");
 
+    td1.setAttribute("id", "savedPlayerTd");
+    td2.setAttribute("id", "savedPlayerTd");
+
     checkbox.setAttribute("type", "checkbox");
     checkbox.setAttribute("id", "checkbox" + i);
     string = json.rows[i].nimi;
@@ -66,7 +69,8 @@ function newPlayer() {
     xmlhttp.send(JSON.stringify(body));
     setTimeout(function(){
       getPlayers();
-    }, 500);
+      document.getElementById("playerfield").value = '';
+    }, 1000);
   }
 }
 
