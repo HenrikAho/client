@@ -1,3 +1,6 @@
+showGrid();
+
+
 darkModeCheck();
 function darkModeCheck() {
     if (localStorage.getItem("mode") === "dark"){
@@ -48,6 +51,3 @@ function showGrid(){
     gameGrid.appendChild(pelaajaGridItem);
   }
 }
-
-
-showGrid();
