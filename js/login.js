@@ -66,7 +66,11 @@ function newGroup() {
             xmlhttp.send(JSON.stringify(body));
             localStorage.setItem("group", body.nimi);
             console.log(localStorage.getItem("group"));
-            location.href = "menuscreen.html";
+
+            setTimeout(function(){
+                location.href = "menuscreen.html";
+            }, 1000);
+
         }
     }
 }
