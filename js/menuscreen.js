@@ -15,4 +15,8 @@ function darkModeCheck() {
         document.body.style.backgroundSize = 'cover';
     }
 }
+function logOut() {
+    localStorage.setItem("group", "");
+    console.log("Ryhmä nollattu: " + localStorage.getItem("group"));
+}
 
