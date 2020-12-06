@@ -74,6 +74,9 @@ function newPlayer() {
   if(player === null || player === ""){
     alert('Kirjoita pelaajan nimi!');
   }
+  else if(textInputCheck(player) === false) {
+    alert("Syötä vain kirjaimia!");
+  }
   else {
     body = { "pelaajan_nimi": player, "ryhman_nimi": group};
     let xmlhttp = new XMLHttpRequest();
@@ -108,3 +111,17 @@ function startGame() {
 }
 
 getPlayers();
+
+function textInputCheck(inputtxt)
+//Tekstisyötteen tarkistus
+{
+  let inputType = /^[A-Öa-ö]+$/;
+  if(inputtxt.match(inputType))
+  {
+    return true;
+  }
+  else
+  {
+    return false;
+  }
+}

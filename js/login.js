@@ -52,7 +52,12 @@ function newGroup() {
     if (group.length == 0 || password.length == 0) {
         alert('Täytä molemmat kentät!');
         return;
-    } else {
+    }
+    else if(textInputCheck(group) === false) {
+        alert("Ryhmän nimessä saa olla ainoastaan kirjaimia!");
+    }
+    else
+        {
         let pwCheck = window.prompt("Vahvista salasana:");
         if(password !== pwCheck){
             alert("Salasana ei täsmää!");
@@ -72,5 +77,18 @@ function newGroup() {
             }, 1000);
 
         }
+    }
+}
+function textInputCheck(inputtxt)
+//Tekstisyötteen tarkistus
+{
+    let inputType = /^[A-Öa-ö]+$/;
+    if(inputtxt.match(inputType))
+    {
+        return true;
+    }
+    else
+    {
+        return false;
     }
 }
