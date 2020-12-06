@@ -55,6 +55,7 @@ function newGroup() {
     }
     else if(textInputCheck(group) === false) {
         alert("Ryhmän nimessä saa olla ainoastaan kirjaimia!");
+        return;
     }
     else
         {
