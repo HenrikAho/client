@@ -98,6 +98,12 @@ function showPlayer(tuloksetJSON) {
         tuloksetJSON.rows[0].p6 * 6 + tuloksetJSON.rows[0].p7 * 7 + tuloksetJSON.rows[0].p8 * 8 + tuloksetJSON.rows[0].p9 * 9 + tuloksetJSON.rows[0].p10 * 10 + tuloksetJSON.rows[0].p11 * 11 +
         tuloksetJSON.rows[0].p12 * 12) / heitotlkm;
 
+    if (tuloksetJSON.rows[0].pelatutlkm == 0) {
+        voittoprosentti = 0;
+        osumatarkkuus = 0;
+        pistekeskiarvo = 0;
+    }
+
         td1 = document.getElementById("td1");
         td2 = document.getElementById("td2");
         td3 = document.getElementById("td3");
