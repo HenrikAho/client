@@ -1,18 +1,6 @@
 let json;
 let tuloksetJSON;
-darkModeCheck();
-function darkModeCheck() {
-    if (localStorage.getItem("mode") === "dark"){
-        document.body.style.background = 'url(images/darkmode.jpg) no-repeat';
-        document.body.style.backgroundAttachment = 'fixed';
-        document.body.style.backgroundSize = 'cover';
-    }
-    else {
-        document.body.style.background = 'url(images/taustakuva.jpg) no-repeat';
-        document.body.style.backgroundAttachment = 'fixed';
-        document.body.style.backgroundSize = 'cover';
-    }
-}
+
 getPlayers();
 function getPlayers() {
         let xmlhttp = new XMLHttpRequest();
@@ -109,6 +97,12 @@ function showPlayer(tuloksetJSON) {
     let pistekeskiarvo = (tuloksetJSON.rows[0].p0 + tuloksetJSON.rows[0].p1 + tuloksetJSON.rows[0].p2 * 2 + tuloksetJSON.rows[0].p3 * 3 + tuloksetJSON.rows[0].p4 * 4 + tuloksetJSON.rows[0].p5 * 5 +
         tuloksetJSON.rows[0].p6 * 6 + tuloksetJSON.rows[0].p7 * 7 + tuloksetJSON.rows[0].p8 * 8 + tuloksetJSON.rows[0].p9 * 9 + tuloksetJSON.rows[0].p10 * 10 + tuloksetJSON.rows[0].p11 * 11 +
         tuloksetJSON.rows[0].p12 * 12) / heitotlkm;
+
+    if (tuloksetJSON.rows[0].pelatutlkm == 0) {
+        voittoprosentti = 0;
+        osumatarkkuus = 0;
+        pistekeskiarvo = 0;
+    }
 
         td1 = document.getElementById("td1");
         td2 = document.getElementById("td2");
