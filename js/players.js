@@ -57,7 +57,7 @@ function showList(json) {
 
 function newPlayer() {
   let player = document.getElementById("playerfield").value;
-  let group = localStorage.getItem("group");
+
   let body;
   if(player === null || player === ""){
     alert('Kirjoita pelaajan nimi!');
@@ -67,6 +67,7 @@ function newPlayer() {
   }
   else {
     body = { "pelaajan_nimi": player, "ryhman_nimi": group};
+    console.log(body);
     let xmlhttp = new XMLHttpRequest();
     xmlhttp.open("POST", "https://rocky-cliffs-72708.herokuapp.com/api/newplayer", true);
     xmlhttp.setRequestHeader("Content-Type", "application/json");
