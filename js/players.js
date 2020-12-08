@@ -94,7 +94,10 @@ function startGame() {
       localStorage.removeItem("player" + i);
     }
   }
-  location.href = "peli1.html";
+
+  setTimeout(function(){
+    location.href = "peli1.html";
+  }, 1000);
 
 }
 
