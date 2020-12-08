@@ -45,5 +45,12 @@
 </div>
 <script src="js/peli1.js"></script>
 <script src="js/fontChange.js"></script>
+<script>
+    if(localStorage.getItem("mode") === "dark") {
+        document.getElementById("peliOhje").style.color = "white";
+    } else {
+        ocument.getElementById("peliOhje").style.color = "black";
+    }
+</script>
 </body>
 </html>
