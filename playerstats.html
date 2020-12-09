@@ -103,5 +103,13 @@
     </div>
 </div>
 <script src="js/playerstats.js"></script>
+<script src="js/fontChange.js"></script>
+<script>
+    if(localStorage.getItem("mode") === "dark") {
+        document.getElementsByTagName("h7").item(0).style.color = "white";
+    } else {
+        document.getElementsByTagName("h1").item(0).style.color = "black";
+    }
+</script>
 </body>
 </html>

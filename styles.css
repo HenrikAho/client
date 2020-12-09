@@ -11,8 +11,6 @@ html, body {
 
 }
 
-
-
 p {
     text-align: center;
     font-size: 100px;
@@ -208,6 +206,7 @@ a {
     margin: -2em;
 }
 
+
 ul {
     list-style-type: none;
 }
@@ -314,6 +313,7 @@ ul {
     transform: scale(0.5);
     font-family: "Courier New";
     text-align: center;
+
 }
 
 .login-form {
