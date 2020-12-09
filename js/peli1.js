@@ -5,7 +5,7 @@ let strikes = [];
 let playerLost = [];
 let currentPlayer = 0;
 let roundCounter = 1;
-
+let resultGrid = document.getElementById("resultGrid");
 let peliOhje = document.getElementById("peliOhje");
 showStartGrid();
 
@@ -15,7 +15,9 @@ showStartGrid();
 function showStartGrid(){
  let player;
  let string = '';
-  for (let i = 0; i < 9; i++){
+ let playerAmount = parseInt(localStorage.getItem("playerAmount"));
+
+  for (let i = 0; i < playerAmount; i++){
     player = localStorage.getItem("player" + i);
 
     if(player !== null){
@@ -23,24 +25,38 @@ function showStartGrid(){
       scores.push(0);
       strikes.push(0);
       playerLost.push(false);
-      string = string + "auto ";
+
     }
 
+  }
+  console.log(players.length);
+  let columnString = 100/players.length;
+  for(let i = 0; i < players.length; i++){
+    string += columnString + "% ";
   }
 
   //Laittaa oikean määrään columneja
   let gameGrid = document.getElementById("gameGrid");
   gameGrid.style.gridTemplateColumns = string;
+  resultGrid.style.gridTemplateColumns = string;
 
   let pelaajaGridItem;
+  let pelaajaResultItem ;
+
   for(let i = 0; i < players.length; i++){
     pelaajaGridItem = document.createElement("div");
     pelaajaGridItem.setAttribute("class", "grid-item");
     pelaajaGridItem.setAttribute("id", "playerName" + i);
 
+    pelaajaResultItem = document.createElement("div");
+    pelaajaResultItem.setAttribute("class", "grid-item");
+    pelaajaResultItem.setAttribute("id", "playerResult" + i);
+
     pelaajaGridItem.innerHTML = players[i];
+    pelaajaResultItem.innerHTML = "0";
 
     gameGrid.appendChild(pelaajaGridItem);
+    resultGrid.appendChild(pelaajaResultItem);
   }
   peliOhje.innerHTML = "Anna pelaajan " + players[0] + " tulos";
 }
@@ -62,9 +78,9 @@ function updateScore(playerToUpdate, result) {
   else if(strikes[playerToUpdate] >= 3){
     playerLost[playerToUpdate] = true;
   }
+  let resultGridItem = document.getElementById("playerResult" + playerToUpdate);
+  resultGridItem.innerHTML = "<b>(" + scores[playerToUpdate] + ")";
 
-  let nameGrid = document.getElementById("playerName" + playerToUpdate);
-  nameGrid.innerHTML = players[playerToUpdate] + " <b>(" + scores[playerToUpdate] + ")</b>";
 
 
 
@@ -131,19 +147,18 @@ function winnerFound(){
 function saveGame(){
   let group = localStorage.getItem("group");
   let resultGrid;
-  let wholeBody;
   let body = {};
   let value;
   console.log("tallenna painettu");
 
   for(let i = 0; i < players.length; i++) {
-    let tempPlayer = "pelaaja" + i;
+    let tempPlayer = "pelaaja" + (i + 1);
     let p0 = 0, p1 = 0, p2 = 0, p3 = 0, p4 = 0, p5 = 0, p6 = 0, p7 = 0, p8 = 0, p9 = 0, p10 = 0, p11 = 0, p12 = 0;
 
-    for (let x = 1; x < roundCounter; x++) {
+    for (let x = 1; x <= roundCounter; x++) {
       resultGrid = document.getElementById("resultGrid" + x + i);
-      if(resultGrid === null){
-        return;
+      if(resultGrid == null || resultGrid.innerText === "X"){
+        break;
       }
       else{
         value = parseInt(resultGrid.innerText);
@@ -207,13 +222,18 @@ function saveGame(){
             "p10": p10,
             "p11": p11,
             "p12": p12
-          }
+          };
+    console.log("pelaaja tallennettu objektiin");
     }
 
 
   body["ryhman_nimi"] = group;
   body["voittajan_nimi"] = players[currentPlayer];
-  body["pvm"] = "2020-12-8";
+
+  let today = new Date();
+  let pvm = today.getFullYear() + "-" + (today.getMonth() + 1) + "-" + today.getDate();
+  body["pvm"] = pvm;
+
 
   console.log(body);
 
@@ -221,9 +241,14 @@ function saveGame(){
   xmlhttp.open("POST", "https://rocky-cliffs-72708.herokuapp.com/api/newgame", true);
   xmlhttp.setRequestHeader("Content-Type", "application/json");
   xmlhttp.send(JSON.stringify(body));
+  alert("Peli tallennettu!");
 
   setTimeout(function(){
-    }, 1000);
+    location.href = "menuscreen.html";
+  }, 1000);
+
+
+
 
 
 }

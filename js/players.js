@@ -57,7 +57,7 @@ function showList(json) {
 
 function newPlayer() {
   let player = document.getElementById("playerfield").value;
-
+  let group = localStorage.getItem("group");
   let body;
   if(player === null || player === ""){
     alert('Kirjoita pelaajan nimi!');
@@ -83,8 +83,9 @@ function newPlayer() {
 function startGame() {
   let player;
   let string;
+  let rows = document.getElementById("tBody").rows;
   //Tarkastaa mitkä checkboxit on checkattu
-  for (let i = 0; i<9; i++){
+  for (let i = 0; i<rows.length; i++){
     string = "#checkbox" + i;
     if($(string).is(":checked")){
       console.log(i);
@@ -95,6 +96,7 @@ function startGame() {
       localStorage.removeItem("player" + i);
     }
   }
+  localStorage.setItem("playerAmount", rows.length.toString());
 
   setTimeout(function(){
     location.href = "peli1.html";

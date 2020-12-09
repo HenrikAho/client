@@ -197,7 +197,9 @@ thead {
     transform: scale(0.7);
     font-family: "Courier New";
 }
-
+sup{
+    font-size: 0.35em;
+}
 a {
     display: inline-block;
     position: relative;
@@ -226,14 +228,16 @@ ul {
     padding: 10px;
     max-height: 550px;
     overflow: scroll;
+
 }
 
 .grid-item {
     background-color: navajowhite;
     border: 2px solid rgba(0, 0, 0, 0.8);
-    padding: 20px;
+    padding: 7px;
     font-size: 30px;
     text-align: center;
+    grid-template-columns: min-content 100px;
 }
 
 .peliTitle {
