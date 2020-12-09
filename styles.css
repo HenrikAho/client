@@ -245,9 +245,15 @@ ul {
 }
 
 #napit {
-    margin-top: 5em;
+    margin-top: 1em;
     text-align: center;
 }
+#napitt {
+    margin-top: 5em;
+    text-align: center;
+
+}
+
 
 #lopetaNappi {
     display: block;
@@ -273,31 +279,32 @@ ul {
     font-size: 50px;
     transform: scale(0.7);
     font-family: "Courier New";
+    color: black;
 }
 
 #lightNappi {
     display: block;
     height: 165px;
-    width: 345px;
+    min-width: 345px;
     background-color: transparent;
     background-image: url('images/button.png');
     background-repeat: no-repeat;
     border: none;
     font-size: 50px;
-    transform: scale(0.5);
+    transform: scale(0.9);
     font-family: "Courier New";
 }
 
 #darkNappi {
     display: block;
     height: 165px;
-    width: 345px;
+    min-width: 345px;
     background-color: transparent;
     background-image: url('images/button.png');
     background-repeat: no-repeat;
     border: none;
     font-size: 50px;
-    transform: scale(0.5);
+    transform: scale(0.9);
     font-family: "Courier New";
 }
 
@@ -313,8 +320,23 @@ ul {
     transform: scale(0.5);
     font-family: "Courier New";
     text-align: center;
+    margin-left: 0.6em;
+
+}#playersToMenu {
+
+    height: 165px;
+    width: 345px;
+    background-color: transparent;
+    background-image: url('images/button.png');
+    background-repeat: no-repeat;
+    border: none;
+    font-size: 50px;
+    transform: scale(0.5);
+    font-family: "Courier New";
+    text-align: center;
 
 }
+
 
 .login-form {
     width: 340px;

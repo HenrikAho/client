@@ -141,6 +141,11 @@ function winnerFound(){
   alert(players[currentPlayer] + " voitti pelin!");
   document.getElementById("peliOhje").remove();
   document.getElementById("resultDiv").remove();
+  let saveButton = document.createElement("button");
+  saveButton.setAttribute("id", "tallennaNappi");
+  saveButton.setAttribute("onclick","saveGame()");
+  saveButton.innerText = "Tallenna";
+  document.getElementById("napitt").appendChild(saveButton);
 }
 
 
@@ -150,6 +155,8 @@ function saveGame(){
   let body = {};
   let value;
   console.log("tallenna painettu");
+
+
 
   for(let i = 0; i < players.length; i++) {
     let tempPlayer = "pelaaja" + (i + 1);

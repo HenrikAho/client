@@ -26,8 +26,6 @@
 
 
 
-
-        </div>
     </div>
     <div class="row">
         <div class="col-md-12" style="justify-content: center; display: flex;">
@@ -43,19 +41,19 @@
         </div>
     </div>
 
-<div class="btn-toolbar" style="justify-content: center; display: flex;" id="napit">
-    <button class="btn btn-primary" id="lopetaNappi" style="color: black" onclick="endGame()">Lopeta</button>
-    <button class="btn btn-primary" id="tallennaNappi" style="color: black" onclick="saveGame()">Tallenna</button>
+<div class="btn-toolbar" style="justify-content: center; display: flex;" id="napitt">
+    <button  id="lopetaNappi" style="color: black" onclick="endGame()">Lopeta</button>
 </div>
 
 </div>
+
 <script src="js/peli1.js"></script>
 <script src="js/fontChange.js"></script>
 <script>
     if(localStorage.getItem("mode") === "dark") {
         document.getElementById("peliOhje").style.color = "white";
     } else {
-        ocument.getElementById("peliOhje").style.color = "black";
+        document.getElementById("peliOhje").style.color = "black";
     }
 </script>
 </body>
