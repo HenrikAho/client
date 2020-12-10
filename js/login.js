@@ -1,5 +1,12 @@
+/**
+ * @author Henrik Aho
+ */
+
 let json;
 
+/**
+ * Hankkii ryhmän tunnukset tietokannasta.
+ */
 function getGroup() {
     let group = document.getElementById("group").value;
     let password = document.getElementById("password").value;
@@ -28,11 +35,19 @@ function getGroup() {
     }
 }
 
+/**
+ * Kirjautuu ryhmän tunnuksilla sisään.
+ */
 function setGroup(json) {
     localStorage.setItem("group", json.rows[0].nimi);
     console.log(localStorage.getItem("group"));
     location.href = "menuscreen.html";
+
 }
+
+/**
+ * Luo uuden ryhmän.
+ */
 function newGroup() {
     let group = document.getElementById("group").value;
     let password = document.getElementById("password").value;
@@ -68,6 +83,12 @@ function newGroup() {
         }
     }
 }
+
+/**
+ * Tarkastaa, onko syöte kirjoitettu oikein.
+ * @param inputtxt
+ * @returns {boolean}
+ */
 function textInputCheck(inputtxt)
 //Tekstisyötteen tarkistus
 {
