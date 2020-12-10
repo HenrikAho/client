@@ -264,7 +264,7 @@ ul {
     background-repeat: no-repeat;
     border: none;
     font-size: 50px;
-    transform: scale(0.7);
+    transform: scale(0.95);
     font-family: "Courier New";
 }
 
@@ -277,7 +277,7 @@ ul {
     background-repeat: no-repeat;
     border: none;
     font-size: 50px;
-    transform: scale(0.7);
+    transform: scale(0.95);
     font-family: "Courier New";
     color: black;
 }
