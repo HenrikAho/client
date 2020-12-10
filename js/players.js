@@ -1,4 +1,10 @@
+/**
+ * @author Onni Lukkarila
+ */
 
+/**
+ * Hakee pelaajat tietokannasta GET-metodilla.
+ */
 function getPlayers() {
   let xmlhttp = new XMLHttpRequest();
   xmlhttp.onreadystatechange = function() {
@@ -19,6 +25,10 @@ function getPlayers() {
   console.log("testi2");
 }
 
+/**
+ * Laittaa haetut nimet html:ään.
+ * @param json
+ */
 function showList(json) {
   let i;
   let tableRow;
@@ -54,7 +64,9 @@ function showList(json) {
   console.log("lista päivittetty");
 }
 
-
+/**
+ * Uuden pelaajan luonti-metodi. Käyttää POST-metodia.
+ */
 function newPlayer() {
   let player = document.getElementById("playerfield").value;
   let group = localStorage.getItem("group");
@@ -79,7 +91,9 @@ function newPlayer() {
   }
 }
 
-
+/**
+ * Pelin aloitus-metodi. Tallentaa valitut pelaajat localstorageen.
+ */
 function startGame() {
   let player;
   let string;
@@ -106,6 +120,11 @@ function startGame() {
 
 getPlayers();
 
+/**
+ * Tekstinsyötöntarkitus
+ * @param inputtxt
+ * @returns {boolean}
+ */
 function textInputCheck(inputtxt)
 //Tekstisyötteen tarkistus
 {

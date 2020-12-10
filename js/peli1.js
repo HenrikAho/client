@@ -1,4 +1,7 @@
-
+/**
+ *
+ * @author Onni Lukkarila
+ */
 let players = [];
 let scores = [];
 let strikes = [];
@@ -10,8 +13,9 @@ let peliOhje = document.getElementById("peliOhje");
 showStartGrid();
 
 
-
-
+/**
+ * Tämä funktio alustaa pelitaulukon.
+ */
 function showStartGrid(){
  let player;
  let string = '';
@@ -61,6 +65,11 @@ function showStartGrid(){
   peliOhje.innerHTML = "Anna pelaajan " + players[0] + " tulos";
 }
 
+/**
+ * Pisteiden päivitys.
+ * @param playerToUpdate
+ * @param result
+ */
 function updateScore(playerToUpdate, result) {
 
   if (result === 0){
@@ -81,11 +90,11 @@ function updateScore(playerToUpdate, result) {
   let resultGridItem = document.getElementById("playerResult" + playerToUpdate);
   resultGridItem.innerHTML = "<b>(" + scores[playerToUpdate] + ")";
 
-
-
-
 }
 
+/**
+ * Lisää tuloksen taulukkoon.
+ */
 function addResult(){
   let tulosItem;
   let tulos;
@@ -132,11 +141,16 @@ function addResult(){
   gameGrid.scrollTop = gameGrid.scrollHeight;
 }
 
+/**
+ * Pelin lopettaessa, siirtää käyttäjän etusivulle.
+ */
 function endGame(){
   location.href = "menuscreen.html";
 }
 
-
+/**
+ * Kun voittaja löytyy, tekee tarvittavat muutokset.
+ */
 function winnerFound(){
   alert(players[currentPlayer] + " voitti pelin!");
   document.getElementById("peliOhje").remove();
@@ -148,7 +162,9 @@ function winnerFound(){
   document.getElementById("napitt").appendChild(saveButton);
 }
 
-
+/**
+ * Tallentaa pelin POST-metodilla tietokantaan.
+ */
 function saveGame(){
   let group = localStorage.getItem("group");
   let resultGrid;
@@ -253,11 +269,6 @@ function saveGame(){
   setTimeout(function(){
     location.href = "menuscreen.html";
   }, 1000);
-
-
-
-
-
 }
 
 
