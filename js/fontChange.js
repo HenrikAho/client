@@ -1,4 +1,12 @@
+/**
+ * @author Nikke Tikka
+ * Fontin väri teeman mukaan
+ */
 fontChangeCheck();
+
+/**
+ * Tarkistaa teeman ja vaihtaa fontin sopivan väriseksi
+ */
 function fontChangeCheck() {
     if (localStorage.getItem("mode") === "dark"){
         document.getElementsByTagName("h1").item(0).style.color = "white";
