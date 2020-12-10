@@ -50,9 +50,9 @@ h1 {
     transform: scale(2.5);
 }
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 430px) {
     #stats{
-        font-size:25px;
+        font-size:2em;
     }
 
     #asetukset{
