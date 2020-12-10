@@ -1,4 +1,12 @@
+/**
+ * @author Nikke Tikka
+ * Asettaa sivun teeman
+ */
 darkModeCheck();
+
+/**
+ * Tarkista valittu teema ja vaihda se tarvittaessa
+ */
 function darkModeCheck() {
     if (localStorage.getItem("mode") === "dark"){
         document.body.style.background = 'url(images/darkmode.jpg) no-repeat';
