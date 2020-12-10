@@ -1,7 +1,15 @@
+/**
+ * @author Henrik Aho
+ */
+
 let json;
 let tuloksetJSON;
 
 getPlayers();
+
+/**
+ * Tarkistaa, löytyykö ryhmästä pelaajia.
+ */
 function getPlayers() {
         let xmlhttp = new XMLHttpRequest();
         console.log("testiä");
@@ -21,6 +29,10 @@ function getPlayers() {
         xmlhttp.send();
 }
 
+/**
+ * Näyttää pelaajat taulukkona.
+ * @param json
+ */
 function showList(json) {
     let i;
     let tableRow;
@@ -60,6 +72,10 @@ function showList(json) {
 
 //----------------------------------------------------------------------------------------------
 
+/**
+ * Etsii tietyn pelaajan statistiikat.
+ * @param id
+ */
 function getPlayerStats(id) {
     let xmlhttp = new XMLHttpRequest();
     console.log("Pelaajan tiedot haetaan id: " + id);
@@ -79,6 +95,10 @@ function getPlayerStats(id) {
     xmlhttp.send();
 }
 
+/**
+ * Näyttää tietyn pelaajan statistiikat taulukkona.
+ * @param tuloksetJSON
+ */
 function showPlayer(tuloksetJSON) {
     let td1, td2, td3, td4, td5, td6, td7;
     let string;
