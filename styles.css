@@ -156,6 +156,10 @@ thead {
     font-family: "Courier New";
 }
 
+#ryhmanNimi {
+    font-size: 2em;
+}
+
 #settings {
     margin: auto;
     display: block;
