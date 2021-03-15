@@ -3,7 +3,7 @@ Web-sovellus seurapelien tulosten ylhäällä pitämiselle. Tällä hetkellä tu
 
 Tulospalvelu on tehty noin viiden viikon aikana ryhmätyönä Metropolia-ammattikorkeakoulussa.
 Projektissa on asiakas- sekä palvelinpuolen toteutus. Se myös tallentaa tilastotietoja ulkoiseen tietokantaan.
-Projektissa käytettiin JavaScript, HTML sekä CSS kieliä.
+Projektissa käytettiin JavaScript, HTML sekä CSS kieliä. Sovelluksen ulkoasu on suunniteltu mobiililaitteella käytettäväksi.
 
 Demo: http://tulospalveluclient.herokuapp.com/login.html
 
