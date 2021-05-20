@@ -76,6 +76,7 @@ function updateScore(playerToUpdate, result) {
     strikes[playerToUpdate]++;
   }else{
     scores[playerToUpdate] += result;
+    strikes[playerToUpdate] = 0;
   }
 
   if(scores[playerToUpdate] === 50){
@@ -145,7 +146,10 @@ function addResult(){
  * Pelin lopettaessa, siirtää käyttäjän etusivulle.
  */
 function endGame(){
-  location.href = "menuscreen.html";
+  if (confirm("Haluatko varmasti lopettaa pelin?")){
+    location.href = "menuscreen.html";
+  }
+
 }
 
 /**
