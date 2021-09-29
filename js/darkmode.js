@@ -1,4 +1,5 @@
 darkModeCheck();
+//Checks if dark mode is in use
 function darkModeCheck() {
     if (localStorage.getItem("mode") === "dark"){
         document.body.style.background = 'url(images/darkmode.jpg) no-repeat';
