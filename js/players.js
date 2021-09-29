@@ -1,4 +1,10 @@
+/**
+ * @author Onni Lukkarila
+ */
 
+/**
+ * Hakee pelaajat tietokannasta GET-metodilla.
+ */
 function getPlayers() {
   let xmlhttp = new XMLHttpRequest();
   xmlhttp.onreadystatechange = function() {
@@ -19,6 +25,10 @@ function getPlayers() {
   console.log("testi2");
 }
 
+/**
+ * Laittaa haetut nimet html:ään.
+ * @param json
+ */
 function showList(json) {
   let i;
   let tableRow;
@@ -54,7 +64,9 @@ function showList(json) {
   console.log("lista päivittetty");
 }
 
-
+/**
+ * Uuden pelaajan luonti-metodi. Käyttää POST-metodia.
+ */
 function newPlayer() {
   let player = document.getElementById("playerfield").value;
   let group = localStorage.getItem("group");
@@ -67,6 +79,7 @@ function newPlayer() {
   }
   else {
     body = { "pelaajan_nimi": player, "ryhman_nimi": group};
+    console.log(body);
     let xmlhttp = new XMLHttpRequest();
     xmlhttp.open("POST", "https://rocky-cliffs-72708.herokuapp.com/api/newplayer", true);
     xmlhttp.setRequestHeader("Content-Type", "application/json");
@@ -78,12 +91,15 @@ function newPlayer() {
   }
 }
 
-
+/**
+ * Pelin aloitus-metodi. Tallentaa valitut pelaajat localstorageen.
+ */
 function startGame() {
   let player;
   let string;
+  let rows = document.getElementById("tBody").rows;
   //Tarkastaa mitkä checkboxit on checkattu
-  for (let i = 0; i<9; i++){
+  for (let i = 0; i<rows.length; i++){
     string = "#checkbox" + i;
     if($(string).is(":checked")){
       console.log(i);
@@ -94,6 +110,7 @@ function startGame() {
       localStorage.removeItem("player" + i);
     }
   }
+  localStorage.setItem("playerAmount", rows.length.toString());
 
   setTimeout(function(){
     location.href = "peli1.html";
@@ -103,6 +120,11 @@ function startGame() {
 
 getPlayers();
 
+/**
+ * Tekstinsyötöntarkitus
+ * @param inputtxt
+ * @returns {boolean}
+ */
 function textInputCheck(inputtxt)
 //Tekstisyötteen tarkistus
 {

@@ -43,16 +43,16 @@ h1 {
     text-align: center;
     margin: 0 auto;
     float: none;
+    width: 6em;
 }
 
 #resultDiv {
-    margin-top: 1em;
     transform: scale(2.5);
 }
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 430px) {
     #stats{
-        font-size:25px;
+        font-size:2em;
     }
 
     #asetukset{
@@ -122,7 +122,7 @@ thead {
     background-image: url('images/button.png');
     background-repeat: no-repeat;
     border: none;
-    font-size: 50px;
+    font-size: 3.4em;
     transform: scale(0.7);
     font-family: "Courier New";
 
@@ -156,6 +156,10 @@ thead {
     font-family: "Courier New";
 }
 
+#ryhmanNimi {
+    font-size: 2em;
+}
+
 #settings {
     margin: auto;
     display: block;
@@ -178,7 +182,7 @@ thead {
     background-image: url('images/button.png');
     background-repeat: no-repeat;
     border: none;
-    font-size: 40px;
+    font-size: 2.7em;
     transform: scale(0.7);
     font-family: "Courier New";
 }
@@ -195,7 +199,9 @@ thead {
     transform: scale(0.7);
     font-family: "Courier New";
 }
-
+sup{
+    font-size: 0.35em;
+}
 a {
     display: inline-block;
     position: relative;
@@ -209,7 +215,9 @@ ul {
     list-style-type: none;
 }
 
-
+#peliOhje{
+    transform: scale(0.6);
+}
 .textfield {
     transform: scale(0.2);
     text-align: center;
@@ -221,27 +229,37 @@ ul {
     display: grid;
     background-color: black;
     padding: 10px;
+    max-height: 550px;
+    overflow: scroll;
+
 }
 
 .grid-item {
     background-color: navajowhite;
     border: 2px solid rgba(0, 0, 0, 0.8);
-    padding: 20px;
+    padding: 7px;
     font-size: 30px;
     text-align: center;
+    grid-template-columns: min-content 100px;
 }
 
 .peliTitle {
-    margin-bottom: 1em;
+    margin: 1.5em 0 1em 0;
+    transform: scale(2);
 }
 
 #napit {
-    margin-top: 3em;
+    margin-top: 1em;
     text-align: center;
 }
+#napitt {
+    margin-top: 5em;
+    text-align: center;
+
+}
+
 
 #lopetaNappi {
-    margin-right: 5em;
     display: block;
     height: 165px;
     width: 345px;
@@ -250,7 +268,7 @@ ul {
     background-repeat: no-repeat;
     border: none;
     font-size: 50px;
-    transform: scale(0.7);
+    transform: scale(0.95);
     font-family: "Courier New";
 }
 
@@ -263,33 +281,34 @@ ul {
     background-repeat: no-repeat;
     border: none;
     font-size: 50px;
-    transform: scale(0.7);
+    transform: scale(0.95);
     font-family: "Courier New";
+    color: black;
 }
 
 #lightNappi {
     display: block;
     height: 165px;
-    width: 345px;
+    min-width: 345px;
     background-color: transparent;
     background-image: url('images/button.png');
     background-repeat: no-repeat;
     border: none;
     font-size: 50px;
-    transform: scale(0.5);
+    transform: scale(0.9);
     font-family: "Courier New";
 }
 
 #darkNappi {
     display: block;
     height: 165px;
-    width: 345px;
+    min-width: 345px;
     background-color: transparent;
     background-image: url('images/button.png');
     background-repeat: no-repeat;
     border: none;
     font-size: 50px;
-    transform: scale(0.5);
+    transform: scale(0.9);
     font-family: "Courier New";
 }
 
@@ -306,7 +325,21 @@ ul {
     font-family: "Courier New";
     text-align: center;
 
+}#playersToMenu {
+
+    height: 165px;
+    width: 345px;
+    background-color: transparent;
+    background-image: url('images/button.png');
+    background-repeat: no-repeat;
+    border: none;
+    font-size: 50px;
+    transform: scale(0.5);
+    font-family: "Courier New";
+    text-align: center;
+
 }
+
 
 .login-form {
     width: 340px;

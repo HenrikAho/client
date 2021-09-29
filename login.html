@@ -17,13 +17,14 @@
 <div class="container-fluid">
     <div class="row">
         <div class="col-md-12">
-            <h1 id="stats">Olvi III</h1>
+            <h1 id="stats">Tulospalvelu</h1>
         </div>
+    </div>
         <div class="login-form">
             <form action="/examples/actions/confirmation.php" method="post">
-                <h2 class="text-center">Kirjaudu ryhmän tunnuksilla</h2>
+                <h2 class="text-center">Kirjaudu ryhmän tunnuksilla:</h2>
                 <div class="form-group">
-                    <input type="text" id="group" class="form-control" placeholder="Nimi" required="required">
+                    <input type="text" id="group" class="form-control" placeholder="Nimi" required="required" maxlength="15">
                 </div>
                 <div class="form-group">
                     <input type="password" id="password" class="form-control" placeholder="Salasana" required="required">
@@ -36,7 +37,7 @@
                 </div>
             </form>
         </div>
-    </div>
+
 </div>
 <script src="js/login.js"></script>
 <script src="js/fontChange.js"></script>
